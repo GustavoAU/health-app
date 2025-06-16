@@ -1,0 +1,68 @@
+[
+  {
+    "id": 1,
+    "name": "Dr. Brian Adams",
+    "specialty": "Heart Disease",
+    "distance": 2.4,
+    "rating": 4.8,
+    "category": "Medicine",
+    "gender": "male"
+  },
+  {
+    "id": 2,
+    "name": "Dr. Anna Shane",
+    "specialty": "Dental Care",
+    "distance": 1.2,
+    "rating": 4.6,
+    "category": "Checkup",
+    "gender": "female"
+  },
+  {
+    "id": 3,
+    "name": "Dr. Christina Pierce",
+    "specialty": "Eye Specialist",
+    "distance": 3.1,
+    "rating": 4.7,
+    "category": "Healthcare",
+    "gender": "female"
+  },
+  {
+    "id": 4,
+    "name": "Dr. William Lang",
+    "specialty": "Pulmonology",
+    "distance": 4.1,
+    "rating": 4.9,
+    "category": "Medicine",
+    "gender": "male"
+  },
+  {
+    "id": 5,
+    "name": "Dr. Sofia Nunez",
+    "specialty": "Pediatrics",
+    "distance": 2.6,
+    "rating": 4.5,
+    "category": "Healthcare",
+    "gender": "female"
+
+  },
+  {
+    "id": 6,
+    "name": "Dr. Emily Tran",
+    "specialty": "Blood Testing",
+    "distance": 1.5,
+    "rating": 4.2,
+    "category": "Checkup",
+    "gender": "female"
+
+  },
+  {
+    "id": 7,
+    "name": "Dr. Marcus Lee",
+    "specialty": "Emergency Surgery",
+    "distance": 5.2,
+    "rating": 4.9,
+    "category": "Hospital",
+    "gender": "male"
+
+  }
+]

@@ -27,18 +27,38 @@ app.get("/api/providers", async (req, res) => {
 });
 
 // 🔥 OpenAI API Route
-app.post("/api/openai", async (req, res) => {
-    try {
-        const response = await axios.post("https://api.openai.com/v1/completions", req.body, {
-            headers: { Authorization: `Bearer ${process.env.OPENAI_API_KEY}`, "Content-Type": "application/json" },
-        });
+app.post("/api/gemini", async (req, res) => {
+  try {
+    const payload = {
+      contents: [
+        {
+          role: "user",
+          parts: [{ text: req.body.prompt }]
+        }
+      ]
+    };
 
-        res.json(response.data); // ✅ Always return JSON
-    } catch (error) {
-        console.error("API Error:", error);
-        res.status(500).json({ error: error.message }); // ✅ Prevent frontend crashes
+    const response = await axios.post(
+      `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-pro:generateContent?key=${process.env.GOOGLE_API_KEY}`,
+      payload,
+      {
+        headers: { "Content-Type": "application/json" }
+      }
+    );
+
+    const reply = response.data.candidates?.[0]?.content?.parts?.[0]?.text || "No reply from Gemini.";
+    res.json({ suggestion: reply });
+  } catch (error) {
+    console.error("Gemini API Error:");
+    if (error.response) {
+      console.error("Status:", error.response.status);
+      console.error("Data:", error.response.data);
+    } else {
+      console.error("Error:", error.message);
     }
+    res.status(error.response?.status || 500).json({ error: error.response?.data?.error?.message || "Something went wrong with Gemini API" });
+  }
 });
 
 const PORT = process.env.PORT || 5050;
-server.listen(PORT, () => console.log(`Server running on port ${PORT}`)); // ✅ WebSocket and Express share the same server
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`)); // ✅ WebSocket and Express share the same server

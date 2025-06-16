@@ -4,9 +4,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Results from './pages/Results';
 
-
-import './App.css'
 import './index.css'
+
 
 
 

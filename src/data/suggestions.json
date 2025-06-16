@@ -1,0 +1,6 @@
+{
+    "Medicine": ["chest pain", "blood pressure monitoring", "skin irritation"],
+    "Checkup": ["routine physical", "cholesterol test", "dental screening"],
+    "Healthcare": ["child fever", "eye checkup", "mental wellness"],
+    "Hospital": ["urgent care", "surgery consultation", "inpatient admission"]
+}
